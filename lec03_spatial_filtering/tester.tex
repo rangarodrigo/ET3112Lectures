@@ -1,0 +1,106 @@
+\begin{frame}[t,fragile]{Noise}
+    \begin{columns}[t]
+        \column{0.6\textwidth}
+        \begin{itemize}
+            \item Salt and pepper noise: contains random occurrences of black and white pixels
+            \item Impulse noise: contains random occurrences of white pixels
+            \item Gaussian noise: variations in intensity drawn from a Gaussian normal distribution
+        \end{itemize}
+        \column{0.4\textwidth}
+            \begin{figure}
+              \centering
+              %\input{./en2550_lec02_point_operations/figures/gray_image_grid}
+              \caption{}
+            \end{figure}
+    \end{columns}
+        \credit{S. Sietz}
+\end{frame}
+
+
+\begin{frame}[t,fragile]{Gaussian Noise}
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Mathematical model: sum of many independent factors
+            \item Good for small standard deviations
+            \item Assumption: independent, zero-mean noise
+        \end{itemize}
+        \column{0.5\textwidth}
+            \begin{figure}
+              \centering
+              \includegraphics[width=\textwidth]{./figures/gaussian_noise.jpg}
+              \caption{}
+            \end{figure}
+    \end{columns}
+        \credit{M. Hebert}
+\end{frame}
+
+
+\begin{frame}[plain]
+    \begin{columns}[t]
+        \column{0.5\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{./figures/noise_level_and_smoothing.jpg}
+          \caption{Reducing Gaussian noise: noise $\sigma$ and smoothing kernel size}
+        \end{figure}
+        \column{0.5\textwidth}
+            \vspace{0.5in}
+            Reducing Gaussian Noise\par
+            Smoothing with larger standard deviations suppresses noise, but also blurs the image.
+    \end{columns}
+        \credit{Svetlana Lazebnik}
+\end{frame}
+
+
+
+\begin{frame}{Reducing Salt-and-Pepper Noise}
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{./figures/s_and_p_with_gaussian.jpg}
+      \caption{Inability to reduce salt and pepper noise with Gaussian filtering}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Median Filtering}
+
+    \begin{columns}[t]
+        \column{0.6\textwidth}
+        \begin{figure}
+          \centering
+          \input{./en2550_lec03_spatial_filtering/figures/median}
+          \caption{}
+        \end{figure}
+        \column{0.4\textwidth}
+        A median filter operates over a window by selecting the median intensity in the window. \\
+        Is median filtering linear?
+        \credit{K. Grauman} 
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Sharpening Revisited}
+
+    \begin{columns}[t]
+        \column{0.6\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{./figures/tom_unsharp.jpg}
+          \caption{Sharpening}
+        \end{figure}
+        \column{0.4\textwidth}
+        \begin{enumerate}
+            \item What does blurring take away?
+            \item We add it back.
+        \end{enumerate}
+        \credit{Svetlana Lazebnik}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Unsharp Mask Filter}
+    \begin{equation*}
+        f + \alpha(f - f\ast g) = (1+\alpha)f - \alpha f\ast g = f\ast ((1+\alpha)e - g)
+    \end{equation*}
+    
+\end{frame}

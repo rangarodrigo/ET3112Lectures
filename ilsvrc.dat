@@ -1,0 +1,11 @@
+        year,       top5acc,    layers, label
+        10,         28.2,       1,
+        11,         25.5,       1,
+        12,         16.4,       8,      AlexNet
+        13,         11.7,        8,
+        14,         7.4,         16,      VGG16
+        14,         6.7,         22,     GoogleNet
+        15,         3.57,        152,    ResNet
+        16,         2.99,           ,   Trimps-Soushen
+        17,         2.25,           154, SENet
+       

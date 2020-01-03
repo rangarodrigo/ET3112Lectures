@@ -1,0 +1,90 @@
+
+\begin{frame}{One Column}
+    \begin{enumerate}
+      \item
+    \end{enumerate}
+    \begin{equation}\label{l}
+        \int_0^\infty f(x)dx = x^2\sqrt{x}
+    \end{equation}
+\end{frame}
+
+
+\begin{frame}[t,fragile]{Two-Column}
+    \begin{columns}[t]
+        \column{0.6\textwidth}
+        \begin{itemize}
+            \item
+        \end{itemize}
+        \column{0.4\textwidth}
+            \begin{figure}
+              \centering
+              %\input{./en2550_lec02_point_operations/figures/gray_image_grid}
+              \caption{}
+            \end{figure}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{Two-Column Code}
+    \begin{columns}[t]
+    \column[t]{0.5\textwidth}
+           \begin{lstlisting}[caption=A Grayscale Image, language=Python, escapechar=\@]
+    %matplotlib inline
+
+            \end{lstlisting}
+    \column[t]{0.5\textwidth}
+           \begin{lstlisting}[caption=A Color Image,language=Python, escapechar=\@]
+    %matplotlib inline
+
+             \end{lstlisting}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[t, fragile]{One-Column Code}
+    \begin{lstlisting}[caption=Displaying  Image Properties, language=Python, escapechar=\@]
+%matplotlib inline
+import cv2 as cv
+import matplotlib.pyplot as plt
+img = cv.imread('../images/hugh.jpg', cv.IMREAD_COLOR)
+img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+fig, ax = plt.subplots()
+ax.imshow(img)
+ax.set_title('Image')
+plt.show()
+@\fillblank{print(img.shape)}@
+@\fillblank{print(img.size)}@
+@\fillblank{print(img.dtype)}@
+    \end{lstlisting}
+\end{frame} 
+
+
+% Four Pictures
+\begin{frame}{Examples of Effect of Kernel Choices}
+    \begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{./figures/sigiriya.jpg}
+            \caption{Original}
+            \label{sfi:sigiriya_original}
+        \end{subfigure}
+        \hspace{1cm}
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{./figures/sigiriya_averaged.jpg}
+            \caption{Avegaging}
+            \label{sfi:sigiriya_averaged}
+        \end{subfigure}\\
+        \centering
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{./figures/sigiriya_sobel_horizontal.jpg}
+            \caption{Sobel horizontal}
+            \label{sfi:sigiriya_sobel_horizontal}
+        \end{subfigure}
+        \hspace{1cm}
+        \begin{subfigure}[b]{0.35\textwidth}
+            \includegraphics[width=\textwidth]{./figures/sigiriya_sobel_vertical.jpg}
+            \caption{Sobel vertical}
+            \label{sfi:sigiriya_averaged}
+        \end{subfigure}
+        \caption{Effect of kernels.}\label{fi:effect_of_kernels}
+    \end{figure}
+\end{frame}

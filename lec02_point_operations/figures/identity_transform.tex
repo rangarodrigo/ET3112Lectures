@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+	\begin{axis}
+	[
+		xmin = 0,
+		xmax = 255,
+		ymin = 0,
+		ymax = 255,
+		xtick = {0, 50, 100, 150, 200, 255},
+		ytick = {0, 50, 100, 150, 200, 255},	
+		xlabel = {$f(\vec{x})$},	
+		ylabel = {$g(\vec{x})$},
+		axis equal,
+		width=\textwidth,
+		height=\textwidth,		
+	]
+	\addplot [mark=none, thick, blue!80] coordinates {
+		(0,0)
+		(255,255)
+	};		
+	\end{axis}
+\end{tikzpicture} 
